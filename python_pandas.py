@@ -25,3 +25,10 @@ print(avg_salary)
 
 df['Bonus'] = df['Salary'] * 0.1
 print(df)
+# Output:
+#       Name  Age       City  Salary   Bonus
+# 0     John   25   New York   50000  5000.0
+# 1     Jane   30     London   60000  6000.0
+# 2    Alice   28      Paris   55000  5500.0
+# 3      Bob   35      Tokyo   70000  7000.0
+# 4  Charlie   22     Sydney   45000  4500.0
