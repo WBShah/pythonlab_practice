@@ -9,3 +9,8 @@ print(arr)
 arr += 2 
 print(arr)
 # output: [3 4 5 6 7]
+
+# array squared
+arr_squared = arr ** 2
+print (arr_squared)
+
