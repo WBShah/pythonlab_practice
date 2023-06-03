@@ -36,29 +36,29 @@ class Order(Base):
     customer = relationship('Customer', back_populates='orders')
 
 # Create the database tables
-Base.metadata.create_all(engine)
+#Base.metadata.create_all(engine)
 
 # Creating an instance of the Customer class
-#customer1 = Customer(name = 'John Doe', email = 'john.doe@example.com')
-#customer2 = Customer(name = 'Jane Smith', email ='jane.smith@example.com')
-#customer3 = Customer(name = 'Alice Johnson', email = 'alice.johnson@example.com')
+customer1 = Customer(name = 'John Doe', email = 'john.doe@example.com')
+customer2 = Customer(name = 'Jane Smith', email ='jane.smith@example.com')
+customer3 = Customer(name = 'Alice Johnson', email = 'alice.johnson@example.com')
 
 # Creating an instance of the Order class
-#order1 = Order(product='Laptop', quantity=2)
-#order2 = Order(product='Phone', quantity=1)
-#order3 = Order(product='Tablet', quantity=3)
+order1 = Order(product='Laptop', quantity=2)
+order2 = Order(product='Phone', quantity=1)
+order3 = Order(product='Tablet', quantity=3)
 
-#customer1.orders.append(order1)
-#customer2.orders.append(order2)
-#customer3.orders.append(order3)
+customer1.orders.append(order1)
+customer2.orders.append(order2)
+customer3.orders.append(order3)
 
 # Add the objects to the session and commit
-#session.add_all([customer1, customer2, customer3])
-#session.commit()
+session.add_all([customer1, customer2, customer3])
+session.commit()
 
 # Query the data
 customers = session.query(Customer).all()
-#for customer in customers:
-    #print(customer.name)
-for order in customer.orders:
-    print(f'-{order.product}: {order.quantity}')
+for customer in customers:
+    print(customer.name)
+    for order in customer.orders:
+        print(f'-{order.product}: {order.quantity}')
